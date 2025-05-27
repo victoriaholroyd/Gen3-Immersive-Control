@@ -79,7 +79,7 @@ RUN apt-get update && apt-get install -y \
 RUN echo "source /opt/ros/noetic/setup.bash" >> /root/.bashrc 
 
 # Build the workspace
-RUN /bin/bash -c "source /opt/ros/noetic/setup.bash && cd /root/catkin_workspace && catkin_make"
+RUN /bin/bash -c "source /opt/ros/noetic/setup.bash && cd /root/catkin_workspace && catkin_make -j4 -l4"
 
 RUN echo "source /root/catkin_workspace/devel/setup.bash" >> /root/.bashrc
 
